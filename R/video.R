@@ -12,6 +12,9 @@
 #'   string and have \code{'px'} appended.
 #' @param elementId HTML id tag to be given to the video player element
 #'
+#' @import shiny
+#' @import htmlwidgets
+#'
 #' @export
 video <- function(files, format = NULL, options = list(), width = NULL, height = NULL, elementId = NULL) {
   if (is.null(format)) {

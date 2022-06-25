@@ -5,7 +5,7 @@
 \title{Video Player}
 \usage{
 video(
-  video,
+  files,
   format = NULL,
   options = list(),
   width = NULL,
@@ -14,13 +14,18 @@ video(
 )
 }
 \arguments{
+\item{files}{A vector of file paths or URLs pointing}
+
+\item{format}{An optional list of formats of \code{video}}
+
+\item{options}{A named list of options to apply to the video. List of available options
+available in Details}
+
 \item{width, height}{Must be a valid CSS unit (like \code{'100\%'},
 \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
 string and have \code{'px'} appended.}
 
 \item{elementId}{HTML id tag to be given to the video player element}
-
-\item{files}{A vector of file paths or URLs pointing}
 }
 \description{
 A video player that can be embedded in HTML pages.
