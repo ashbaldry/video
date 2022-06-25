@@ -1,0 +1,6 @@
+dependencies:
+ - name: video
+   version: 7.19.2
+   src: htmlwidgets/video
+   script: video.min.js
+   stylesheet: video-js.min.css
