@@ -7,6 +7,8 @@
 #' @param format An optional list of formats of \code{video}
 #' @param options A named list of options to apply to the video. List of available options
 #' available in Details
+#' @param seek_ping_rate Number of milliseconds between each update of `input$\{id\}_seek` while playing. Default is
+#' set to 1000. If set to 0, then `input$\{id\}_seek` will not exist.
 #' @param width,height Must be a valid CSS unit (like \code{'100\%'},
 #'   \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
 #'   string and have \code{'px'} appended.
@@ -16,7 +18,8 @@
 #' @import htmlwidgets
 #'
 #' @export
-video <- function(files, format = NULL, options = list(), width = NULL, height = NULL, elementId = NULL) {
+video <- function(files, format = NULL, options = list(), seek_ping_rate = 1000,
+                  width = NULL, height = NULL, elementId = NULL) {
   if (is.null(format)) {
     format <- guessVideoFormat(files)
   } else if (length(format) != length(files)) {
@@ -24,13 +27,18 @@ video <- function(files, format = NULL, options = list(), width = NULL, height =
   }
   sources <- lapply(seq(files), function(x) list(src = files[x], type = format[x]))
 
-  settings <- append(
+  options <- append(
     options, list(sources = sources)
   )
 
-  if (!"controls" %in% names(settings)) {
-    settings$controls <- TRUE
+  if (!"controls" %in% names(options)) {
+    options$controls <- TRUE
   }
+
+  settings <- list(
+    options = options,
+    seek_ping_rate = seek_ping_rate
+  )
 
   htmlwidgets::createWidget(
     name = "video",

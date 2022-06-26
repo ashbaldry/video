@@ -7,12 +7,31 @@ HTMLWidgets.widget({
   factory: function(el, width, height) {
     return {
       renderValue: function(settings) {
-        videojs(el.id, settings);
+        let options = settings.options;
+        const id = el.id;
 
-        if (settings.seek_ping_rate > 0 && HTMLWidgets.shinyMode) {
-          setInterval(() => {
-            Shiny.setInputValue(`${el.id}_seek`, videojs(el.id).currentTime());
-          }, settings.seek_ping_rate);
+        video = videojs(el.id, options);
+
+        if (HTMLWidgets.shinyMode) {
+          video.on("loadedmetadata", () => {
+            if (settings.seek_ping_rate > 0) {
+              Shiny.setInputValue(`${id}_seek`, video.currentTime());
+            }
+            Shiny.setInputValue(`${id}_duration`, video.duration());
+            Shiny.setInputValue(`${id}_playing`, false);
+          });
+          video.on("play", () => {
+            Shiny.setInputValue(`${id}_playing`, true);
+          });
+          video.on("pause", () => {
+            Shiny.setInputValue(`${id}_playing`, false);
+          });
+
+          if (settings.seek_ping_rate > 0) {
+            setInterval(() => {
+              Shiny.setInputValue(`${id}_seek`, video.currentTime());
+            }, settings.seek_ping_rate);
+        }
         }
       },
 

@@ -3,19 +3,7 @@ library(video)
 
 ui <- fluidPage(
   h1("Video Player"),
-  video(
-    elementId = "video",
-    files = c(
-      "http://vjs.zencdn.net/v/oceans.mp4",
-      "http://vjs.zencdn.net/v/oceans.webm",
-      "http://vjs.zencdn.net/v/oceans.ogv"
-    ),
-    format = c(
-      "video/mp4",
-      "video/webm",
-      "video/ogg"
-    )
-  )
+  video("http://vjs.zencdn.net/v/oceans.mp4")
 )
 
 server <- function(input, output, session) {
