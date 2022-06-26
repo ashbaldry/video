@@ -24,6 +24,45 @@
 #' \item{\code{\{id\}_duration}}{The duration of the track loaded}
 #' }
 #'
+#' @details
+#' Here are some more common options to implement:
+#' \describe{
+#' \item{autoplay}{
+#'   Whether or not the video will autoplay on load. NOTE: There is not a guarantee autoplay will work in the browser.
+#'   \describe{
+#'   \item{\code{FALSE}}{Default: Video won't autoplay}
+#'   \item{\code{TRUE}}{Video will use browser's autoplay}
+#'   \item{\code{"muted"}}{Will mute the video and then manually call \code{play()} on \code{loadstart()}. Likely to work on browsers}
+#'   \item{\code{"play"}}{Will call \code{play()} on \code{loadstart()}, similar to browser autoplay}
+#'   }
+#' }
+#' \item{controls}{
+#'   Determines whether or not the player has controls that the user can interact with. By default
+#'   \code{video} will include controls even if not specified in the options.
+#' }
+#' \item{poster}{
+#'   A URL to an image that displays before the video begins playing.
+#'   This is often a frame of the video or a custom title screen.
+#' }
+#' }
+#'
+#' For a full list of available options check out \url{https://videojs.com/guides/options/}
+#'
+#' @examples
+#' if (interactive()) {
+#'   library(shiny)
+#'
+#'   ui <- fluidPage(
+#'     title = "howler.js Player",
+#'     video("http://vjs.zencdn.net/v/oceans.mp4")
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   runShiny(ui, server)
+#' }
+#'
 #' @import shiny
 #' @import htmlwidgets
 #'
