@@ -63,7 +63,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-https://user-images.githubusercontent.com/8420419/175826690-19f1d561-cfdc-4e57-9db6-a8374dfd046c.mp4
+https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4
 
 ## Examples
 
