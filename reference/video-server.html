@@ -58,23 +58,23 @@ is initialised, otherwise it won't change the track.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">playHowl</span><span class="op">(</span><span class="va">session</span>, <span class="va">id</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">playVideo</span><span class="op">(</span><span class="va">id</span>, session <span class="op">=</span> <span class="fu">getDefaultReactiveDomain</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">pauseHowl</span><span class="op">(</span><span class="va">session</span>, <span class="va">id</span><span class="op">)</span></span>
+<span><span class="fu">pauseVideo</span><span class="op">(</span><span class="va">id</span>, session <span class="op">=</span> <span class="fu">getDefaultReactiveDomain</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">stopHowl</span><span class="op">(</span><span class="va">session</span>, <span class="va">id</span><span class="op">)</span></span>
+<span><span class="fu">stopVideo</span><span class="op">(</span><span class="va">id</span>, session <span class="op">=</span> <span class="fu">getDefaultReactiveDomain</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">seekVideo</span><span class="op">(</span><span class="va">session</span>, <span class="va">id</span>, <span class="va">seek</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">seekVideo</span><span class="op">(</span><span class="va">id</span>, <span class="va">seek</span>, session <span class="op">=</span> <span class="fu">getDefaultReactiveDomain</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>session</dt>
-<dd><p>Shiny session</p></dd>
-
-
-<dt>id</dt>
+    <dl><dt>id</dt>
 <dd><p>ID of the <code>video</code> to update</p></dd>
+
+
+<dt>session</dt>
+<dd><p>Shiny session</p></dd>
 
 
 <dt>seek</dt>
