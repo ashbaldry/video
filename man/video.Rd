@@ -31,6 +31,16 @@ string and have \code{'px'} appended.}
 
 \item{elementId}{HTML id tag to be given to the video player element}
 }
+\value{
+A shiny.tag containing all of the required options for a \code{videojs} JS object to be initialised in a shiny application.
+
+On the server side there will be up to four additional objects available as inputs:
+\describe{
+\item{\code{\{id\}_playing}}{A logical value as to whether or not the \code{video} is playing audio}
+\item{\code{\{id\}_seek}}{(If \code{seek_ping_rate > 0}) the current time of the track loaded}
+\item{\code{\{id\}_duration}}{The duration of the track loaded}
+}
+}
 \description{
 A video player that can be embedded in HTML pages.
 }
