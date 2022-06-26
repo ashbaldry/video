@@ -18,7 +18,7 @@ guessVideoFormat <- function(files) {
   extensions <- tolower(tools::file_ext(files))
   types <- video_formats[match(extensions, tolower(video_formats$extension)), "type"]
   if (any(is.na(types))) {
-    stop(
+    message(
       "Unable to guess file format types for the following files:\n",
       paste("  -", files[is.na(types)], "\n"),
       "  Use `video_formats` to find the relevant type"

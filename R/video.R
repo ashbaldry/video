@@ -18,13 +18,11 @@
 #' @export
 video <- function(files, format = NULL, options = list(), width = NULL, height = NULL, elementId = NULL) {
   if (is.null(format)) {
-    sources <- lapply(files, function(x) list(src = x, type = guessVideoFormat(x)))
-  } else {
-    if (length(format) != length(files)) {
-      stop("Files is not the same length as format")
-    }
-    sources <- lapply(seq(files), function(x) list(src = files[x], type = format[x]))
+    format <- guessVideoFormat(files)
+  } else if (length(format) != length(files)) {
+    stop("Files is not the same length as format")
   }
+  sources <- lapply(seq(files), function(x) list(src = files[x], type = format[x]))
 
   settings <- append(
     options, list(sources = sources)

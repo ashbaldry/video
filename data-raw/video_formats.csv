@@ -1,5 +1,7 @@
 extension,type
 1d-interleaved-parityfec,video/1d-interleaved-parityfec
+3gp,video/3gpp
+3gp2,video/3gp2
 3gpp,video/3gpp
 3gpp2,video/3gpp2
 3gpp-tt,video/3gpp-tt
@@ -25,16 +27,21 @@ JPEG,video/JPEG
 jpeg2000,video/jpeg2000
 jxsv,video/jxsv
 mj2,video/mj2
+mov,video/quicktime
 MP1S,video/MP1S
 MP2P,video/MP2P
 MP2T,video/MP2T
 mp4,video/mp4
+m4p,video/mp4
+m4v,video/mp4
 MP4V-ES,video/MP4V-ES
 MPV,video/MPV
-mpeg,
+mpeg,video/mpeg
 mpeg4-generic,video/mpeg4-generic
+mpg,video/mpeg
 nv,video/nv
 ogg,video/ogg
+ogv,video/ogg
 parityfec,video/parityfec
 pointer,video/pointer
 quicktime,video/quicktime
@@ -87,3 +94,4 @@ vnd.youtube.yt,video/vnd.youtube.yt
 vnd.vivo,video/vnd.vivo
 VP8,video/VP8
 VP9,video/VP9
+webm,video/webm
