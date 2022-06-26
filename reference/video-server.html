@@ -64,7 +64,9 @@ is initialised, otherwise it won't change the track.</p>
 <span></span>
 <span><span class="fu">stopVideo</span><span class="op">(</span><span class="va">id</span>, session <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">seekVideo</span><span class="op">(</span><span class="va">id</span>, <span class="va">seek</span>, session <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">seekVideo</span><span class="op">(</span><span class="va">id</span>, <span class="va">seek</span>, session <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">changeVideo</span><span class="op">(</span><span class="va">id</span>, <span class="va">files</span>, format <span class="op">=</span> <span class="cn">NULL</span>, session <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/domains.html" class="external-link">getDefaultReactiveDomain</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -79,6 +81,14 @@ is initialised, otherwise it won't change the track.</p>
 
 <dt>seek</dt>
 <dd><p>Time (in seconds) to set the position of the track</p></dd>
+
+
+<dt>files</dt>
+<dd><p>A vector of file paths or URLs pointing</p></dd>
+
+
+<dt>format</dt>
+<dd><p>An optional list of formats of <code>video</code></p></dd>
 
 </dl></div>
     <div id="value">

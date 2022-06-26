@@ -54,6 +54,7 @@
 <span>  <span class="va">files</span>,</span>
 <span>  format <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  seek_ping_rate <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>  width <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  height <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  elementId <span class="op">=</span> <span class="cn">NULL</span></span>
@@ -73,6 +74,11 @@
 <dt>options</dt>
 <dd><p>A named list of options to apply to the video. List of available options
 available in Details</p></dd>
+
+
+<dt>seek_ping_rate</dt>
+<dd><p>Number of milliseconds between each update of `input${id}_seek` while playing. Default is
+set to 1000. If set to 0, then `input${id}_seek` will not exist.</p></dd>
 
 
 <dt>width, height</dt>
