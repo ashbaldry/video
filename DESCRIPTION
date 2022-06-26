@@ -12,7 +12,7 @@ URL: https://github.com/ashbaldry/video, https://github.com/videojs/video.js
 BugReports: https://github.com/ashbaldry/video/issues
 Encoding: UTF-8
 Depends: R (>= 2.10)
-Imports: shiny, htmlwidgets
+Imports: shiny, htmlwidgets, jsonlite
 Suggests: rmarkdown, knitr, shinytest2, globals, testthat (>= 3.0.0)
 Language: en-GB
 LazyData: true
