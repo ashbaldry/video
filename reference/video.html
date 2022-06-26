@@ -91,6 +91,24 @@ string and have <code>'px'</code> appended.</p></dd>
 <dd><p>HTML id tag to be given to the video player element</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>A shiny.tag containing all of the required options for a <code>videojs</code> JS object to be initialised in a shiny application.</p>
+
+
+<p>On the server side there will be up to four additional objects available as inputs:</p><dl><dt><code>{id}_playing</code></dt>
+<dd><p>A logical value as to whether or not the <code>video</code> is playing audio</p></dd>
+
+<dt><code>{id}_seek</code></dt>
+<dd><p>(If <code>seek_ping_rate &gt; 0</code>) the current time of the track loaded</p></dd>
+
+<dt><code>{id}_duration</code></dt>
+<dd><p>The duration of the track loaded</p></dd>
+
+
+</dl></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
