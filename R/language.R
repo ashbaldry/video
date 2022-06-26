@@ -27,6 +27,8 @@
 #'   shinyApp(ui, server)
 #' }
 #'
+#' @importFrom stats setNames
+#'
 #' @rdname video-languages
 #' @export
 addVideoLanguages <- function(video, languages) {
