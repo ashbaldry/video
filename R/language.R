@@ -45,12 +45,12 @@ addVideoLanguages <- function(video, languages) {
 #' @rdname video-languages
 #' @export
 availableLanguages <- function() {
-  lang_dir <- system.file("inst/htmlwidgets/video/lang", package = "video")
+  lang_dir <- system.file("htmlwidgets/video/lang", package = "video")
   unique(sub("\\..*", "", list.files(lang_dir)))
 }
 
 getLanguageText <- function(language) {
   jsonlite::fromJSON(
-    system.file(file.path("inst/htmlwidgets/video/lang", paste0(language, ".json")), package = "video")
+    system.file(file.path("htmlwidgets/video/lang", paste0(language, ".json")), package = "video")
   )
 }
