@@ -63,7 +63,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4
+<video src="https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4" type="movie/mp4"></video>
 
 ## Examples
 
