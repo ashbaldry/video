@@ -63,6 +63,8 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+https://user-images.githubusercontent.com/8420419/175826690-19f1d561-cfdc-4e57-9db6-a8374dfd046c.mp4
+
 ## Examples
 
 All examples are available in the [Examples](https://github.com/ashbaldry/video/tree/main/inst/examples) directory and can be run locally by installing the `{video}` package:
