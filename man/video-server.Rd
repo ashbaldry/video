@@ -2,24 +2,24 @@
 % Please edit documentation in R/server-side.R
 \name{video-server}
 \alias{video-server}
-\alias{playHowl}
-\alias{pauseHowl}
-\alias{stopHowl}
+\alias{playVideo}
+\alias{pauseVideo}
+\alias{stopVideo}
 \alias{seekVideo}
 \title{Update video.js Server-Side}
 \usage{
-playHowl(session, id)
+playVideo(id, session = getDefaultReactiveDomain())
 
-pauseHowl(session, id)
+pauseVideo(id, session = getDefaultReactiveDomain())
 
-stopHowl(session, id)
+stopVideo(id, session = getDefaultReactiveDomain())
 
-seekVideo(session, id, seek)
+seekVideo(id, seek, session = getDefaultReactiveDomain())
 }
 \arguments{
-\item{session}{Shiny session}
-
 \item{id}{ID of the \code{video} to update}
+
+\item{session}{Shiny session}
 
 \item{seek}{Time (in seconds) to set the position of the track}
 }

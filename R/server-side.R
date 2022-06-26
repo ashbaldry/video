@@ -22,28 +22,25 @@
 #' @name video-server
 #' @rdname video-server
 #' @export
-playHowl <- function(session, id) {
-  message_name <- paste0("playHowler_", session$ns(id))
+playVideo <- function(id, session = getDefaultReactiveDomain()) {
   session$sendCustomMessage("playVideo", id)
 }
 
 #' @rdname video-server
 #' @export
-pauseHowl <- function(session, id) {
-  message_name <- paste0("pauseHowler_", session$ns(id))
+pauseVideo <- function(id, session = getDefaultReactiveDomain()) {
   session$sendCustomMessage("pauseVideo", id)
 }
 
 #' @rdname video-server
 #' @export
-stopHowl <- function(session, id) {
-  message_name <- paste0("stopHowler_", session$ns(id))
+stopVideo <- function(id, session = getDefaultReactiveDomain()) {
   session$sendCustomMessage("stopVideo", id)
 }
 
 #' @param seek Time (in seconds) to set the position of the track
 #' @rdname video-server
 #' @export
-seekVideo <- function(session, id, seek) {
+seekVideo <- function(id, seek, session = getDefaultReactiveDomain()) {
   session$sendCustomMessage("seekVideo", list(id = id, seek = seek))
 }
