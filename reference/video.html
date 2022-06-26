@@ -109,7 +109,54 @@ string and have <code>'px'</code> appended.</p></dd>
 
 
 </dl></div>
+    <div id="details">
+    <h2>Details</h2>
+    <p>Here are some more common options to implement:</p><dl><dt>autoplay</dt>
+<dd><p>Whether or not the video will autoplay on load. NOTE: There is not a guarantee autoplay will work in the browser.</p><dl><dt><code>FALSE</code></dt>
+<dd><p>Default: Video won't autoplay</p></dd>
 
+  <dt><code>TRUE</code></dt>
+<dd><p>Video will use browser's autoplay</p></dd>
+
+  <dt><code>"muted"</code></dt>
+<dd><p>Will mute the video and then manually call <code>play()</code> on <code>loadstart()</code>. Likely to work on browsers</p></dd>
+
+  <dt><code>"play"</code></dt>
+<dd><p>Will call <code>play()</code> on <code>loadstart()</code>, similar to browser autoplay</p></dd>
+
+  
+</dl></dd>
+
+<dt>controls</dt>
+<dd><p>Determines whether or not the player has controls that the user can interact with. By default
+  <code>video</code> will include controls even if not specified in the options.</p></dd>
+
+<dt>poster</dt>
+<dd><p>A URL to an image that displays before the video begins playing.
+  This is often a frame of the video or a custom title screen.</p></dd>
+
+
+</dl><p>For a full list of available options check out <a href="https://videojs.com/guides/options/" class="external-link">https://videojs.com/guides/options/</a></p>
+    </div>
+
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html" class="external-link">fluidPage</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    title <span class="op">=</span> <span class="st">"howler.js Player"</span>,</span></span>
+<span class="r-in"><span>    <span class="fu">video</span><span class="op">(</span><span class="st">"http://vjs.zencdn.net/v/oceans.mp4"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">runShiny</span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>
