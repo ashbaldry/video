@@ -18,7 +18,7 @@
 #' @export
 video <- function(files, format = NULL, options = list(), width = NULL, height = NULL, elementId = NULL) {
   if (is.null(format)) {
-    sources <- lapply(files, function(x) list(src = x, type = "video/mp4"))
+    sources <- lapply(files, function(x) list(src = x, type = guessVideoFormat(x)))
   } else {
     if (length(format) != length(files)) {
       stop("Files is not the same length as format")
@@ -61,8 +61,8 @@ video <- function(files, format = NULL, options = list(), width = NULL, height =
 #' @name video-shiny
 #'
 #' @export
-videoOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'video', width, height, package = 'video')
+videoOutput <- function(outputId, width = "100%", height = "400px"){
+  htmlwidgets::shinyWidgetOutput(outputId, "video", width, height, package = "video")
 }
 
 #' @rdname video-shiny
