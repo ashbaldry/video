@@ -44,3 +44,17 @@ stopVideo <- function(id, session = getDefaultReactiveDomain()) {
 seekVideo <- function(id, seek, session = getDefaultReactiveDomain()) {
   session$sendCustomMessage("seekVideo", list(id = id, seek = seek))
 }
+
+#' @param files A vector of file paths or URLs pointing
+#' @param format An optional list of formats of \code{video}
+#' @rdname video-server
+#' @export
+changeVideo <- function(id, files, format = NULL, session = getDefaultReactiveDomain()) {
+  if (is.null(format)) {
+    format <- guessVideoFormat(files)
+  } else if (length(format) != length(files)) {
+    stop("Files is not the same length as format")
+  }
+  sources <- lapply(seq(files), function(x) list(src = files[x], type = format[x]))
+  session$sendCustomMessage("changeVideo", list(id = id, src = sources))
+}

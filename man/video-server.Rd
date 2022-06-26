@@ -6,6 +6,7 @@
 \alias{pauseVideo}
 \alias{stopVideo}
 \alias{seekVideo}
+\alias{changeVideo}
 \title{Update video.js Server-Side}
 \usage{
 playVideo(id, session = getDefaultReactiveDomain())
@@ -15,6 +16,8 @@ pauseVideo(id, session = getDefaultReactiveDomain())
 stopVideo(id, session = getDefaultReactiveDomain())
 
 seekVideo(id, seek, session = getDefaultReactiveDomain())
+
+changeVideo(id, files, format = NULL, session = getDefaultReactiveDomain())
 }
 \arguments{
 \item{id}{ID of the \code{video} to update}
@@ -22,6 +25,10 @@ seekVideo(id, seek, session = getDefaultReactiveDomain())
 \item{session}{Shiny session}
 
 \item{seek}{Time (in seconds) to set the position of the track}
+
+\item{files}{A vector of file paths or URLs pointing}
+
+\item{format}{An optional list of formats of \code{video}}
 }
 \value{
 Updates the the state of the specified \code{video} in the shiny application.

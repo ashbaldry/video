@@ -58,4 +58,8 @@ if (HTMLWidgets.shinyMode) {
   Shiny.addCustomMessageHandler("seekVideo", function(settings) {
     videojs(settings.id).currentTime(settings.seek);
   });
+
+  Shiny.addCustomMessageHandler("changeVideo", function(settings) {
+    videojs(settings.id).src(settings.src);
+  });
 }

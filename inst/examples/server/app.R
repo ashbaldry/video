@@ -20,7 +20,8 @@ ui <- fluidPage(
   actionButton("play", "Play", icon("play")),
   actionButton("pause", "Pause", icon("pause")),
   actionButton("stop", "Stop", icon("stop")),
-  actionButton("seek", "Go to 10 secs")
+  actionButton("seek", "Go to 10 secs"),
+  actionButton("change", "Change video")
 )
 
 server <- function(input, output, session) {
@@ -28,6 +29,7 @@ server <- function(input, output, session) {
   observeEvent(input$pause, pauseVideo("video"))
   observeEvent(input$stop, stopVideo("video"))
   observeEvent(input$seek, seekVideo("video", 10))
+  observeEvent(input$change, changeVideo("video", "//d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4"))
 }
 
 shinyApp(ui, server)

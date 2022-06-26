@@ -8,6 +8,7 @@ video(
   files,
   format = NULL,
   options = list(),
+  seek_ping_rate = 1000,
   width = NULL,
   height = NULL,
   elementId = NULL
@@ -20,6 +21,9 @@ video(
 
 \item{options}{A named list of options to apply to the video. List of available options
 available in Details}
+
+\item{seek_ping_rate}{Number of milliseconds between each update of `input$\{id\}_seek` while playing. Default is
+set to 1000. If set to 0, then `input$\{id\}_seek` will not exist.}
 
 \item{width, height}{Must be a valid CSS unit (like \code{'100\%'},
 \code{'400px'}, \code{'auto'}) or a number, which will be coerced to a
