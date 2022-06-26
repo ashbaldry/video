@@ -64,8 +64,69 @@
   <div class="contents col-md-9">
 
 
-<div class="section level1"><div class="page-header"><h1 id="video---interactive-video-player">{video} - Interactive Video Player<a class="anchor" aria-label="anchor" href="#video---interactive-video-player"></a>
-</h1></div></div>
+<div class="section level1">
+<div class="page-header"><h1 id="video---interactive-video-player">{video} - Interactive Video Player<a class="anchor" aria-label="anchor" href="#video---interactive-video-player"></a>
+</h1></div>
+<p><a href="https://github.com/ashbaldry/video">video</a> is a package that utilises the <a href="https://github.com/videojs/video.js" class="external-link">video.js</a> library to play video on the modern web.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>This package is not yet available on CRAN. To install the latest version:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ashbaldry/video"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>The HTML way to include an audio file in any shiny application/web page is to use the <code>&lt;audio&gt;</code> tag. This cannot (easily) be manipulated from the server.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tags</span><span class="op">$</span><span class="fu">video</span><span class="op">(</span>src <span class="op">=</span> <span class="st">"http://vjs.zencdn.net/v/oceans.mp4"</span>, type <span class="op">=</span> <span class="st">"video/mp4"</span>, controls <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre></div>
+<p>video.js is a flexible video player that is more robust than the basic HTML5 video player, and can easily be manipulated from the server side of shiny applications.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ashbaldry/video">video</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html" class="external-link">fluidPage</a></span><span class="op">(</span></span>
+<span>  title <span class="op">=</span> <span class="st">"video Example"</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">h1</a></span><span class="op">(</span><span class="st">"Video Example"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="reference/video.html">video</a></span><span class="op">(</span></span>
+<span>    <span class="st">"http://vjs.zencdn.net/v/oceans.mp4"</span>,</span>
+<span>    elementId <span class="op">=</span> <span class="st">"video"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  <span class="va">tags</span><span class="op">$</span><span class="fu">p</span><span class="op">(</span></span>
+<span>    <span class="st">"Currently playing:"</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textOutput.html" class="external-link">textOutput</a></span><span class="op">(</span><span class="st">"video_playing"</span>, container <span class="op">=</span> <span class="va">tags</span><span class="op">$</span><span class="va">strong</span>, inline <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">video_playing</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Logic.html" class="external-link">isTRUE</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">video_playing</span><span class="op">)</span><span class="op">)</span> <span class="st">"Yes"</span> <span class="kw">else</span> <span class="st">"No"</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html" class="external-link">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">video_seek</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">video_seek</span><span class="op">)</span> <span class="op">==</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu"><a href="reference/video-server.html">pauseVideo</a></span><span class="op">(</span><span class="st">"video"</span><span class="op">)</span></span>
+<span>    <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">video_seek</span><span class="op">)</span> <span class="op">==</span> <span class="fl">20</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu"><a href="reference/video-server.html">stopVideo</a></span><span class="op">(</span><span class="st">"video"</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
+<p>All examples are available in the <a href="https://github.com/ashbaldry/video/tree/main/inst/examples">Examples</a> directory and can be run locally by installing the <a href="https://github.com/ashbaldry/video">video</a> package:</p>
+<ul>
+<li><a href="https://github.com/ashbaldry/video/tree/main/inst/examples/basic">Basic Player</a></li>
+<li><a href="https://github.com/ashbaldry/video/tree/main/inst/examples/server">Server-Side Controls</a></li>
+</ul>
+</div>
+</div>
 
   </div>
 
