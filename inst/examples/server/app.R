@@ -6,9 +6,9 @@ ui <- fluidPage(
   video(
     elementId = "video",
     files = c(
-      "http://vjs.zencdn.net/v/oceans.mp4",
-      "http://vjs.zencdn.net/v/oceans.webm",
-      "http://vjs.zencdn.net/v/oceans.ogv"
+      "https://vjs.zencdn.net/v/oceans.mp4",
+      "https://vjs.zencdn.net/v/oceans.webm",
+      "https://vjs.zencdn.net/v/oceans.ogv"
     ),
     format = c(
       "video/mp4",

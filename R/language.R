@@ -16,7 +16,7 @@
 #' for more details
 #'
 #' @examples
-#' video <- video("http://vjs.zencdn.net/v/oceans.mp4")
+#' video <- video("https://vjs.zencdn.net/v/oceans.mp4")
 #' video <- addVideoLanguages(video, c("es", "fr", "de"))
 #'
 #' if (interactive()) {

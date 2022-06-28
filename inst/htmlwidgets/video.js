@@ -11,6 +11,7 @@ HTMLWidgets.widget({
         const id = el.id;
 
         video = videojs(el.id, options);
+        document.getElementById(el.id).setAttribute("style", "");
         $(`#${el.id}`).attr("style", null);
 
         if (HTMLWidgets.shinyMode) {
@@ -62,5 +63,9 @@ if (HTMLWidgets.shinyMode) {
 
   Shiny.addCustomMessageHandler("changeVideo", function(settings) {
     videojs(settings.id).src(settings.src);
+  });
+
+  Shiny.addCustomMessageHandler("setVideoPlayrate", function(settings) {
+    videojs(settings.id).playbackRate(settings.playrate);
   });
 }

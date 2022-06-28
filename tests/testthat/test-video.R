@@ -7,7 +7,7 @@ testthat::test_that("video fails with no files", {
 })
 
 testthat::test_that("Simple video player can be created", {
-  player <- video("http://vjs.zencdn.net/v/oceans.mp4")
+  player <- video("https://vjs.zencdn.net/v/oceans.mp4")
 
   testthat::expect_s3_class(player, "video")
   testthat::expect_s3_class(player, "htmlwidget")
@@ -15,9 +15,9 @@ testthat::test_that("Simple video player can be created", {
 
 testthat::test_that("Video player successfully guesses video formats", {
   files <- c(
-    "http://vjs.zencdn.net/v/oceans.mp4",
-    "http://vjs.zencdn.net/v/oceans.webm",
-    "http://vjs.zencdn.net/v/oceans.ogv"
+    "https://vjs.zencdn.net/v/oceans.mp4",
+    "https://vjs.zencdn.net/v/oceans.webm",
+    "https://vjs.zencdn.net/v/oceans.ogv"
   )
   formats <- c("video/mp4", "video/webm", "video/ogg")
 

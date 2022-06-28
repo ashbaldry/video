@@ -3,21 +3,22 @@
 #' @description
 #' Change the state of the video player from the server.
 #'
-#' \code{playVideo}, \code{pauseVideo} and \code{stopVideo} will all be applied to the current track.
+#' \code{playVideo}, \code{pauseVideo} and \code{stopVideo} will all be applied to the current video.
 #'
-#' \code{changeTrack} will update the track to the file specified. This file must be included when the player
-#' is initialised, otherwise it won't change the track.
+#' \code{changeVideo} will update the track to the URL or file specified.
 #'
-#' \code{addTrack} will add a new track to the specified player.
+#' \code{updatePlaybackRate} will change how fast the video is playing.
 #'
 #' @param session Shiny session
 #' @param id ID of the \code{video} to update
 #'
-#' @examples
-#' if (interactive()) {}
-#'
 #' @return
 #' Updates the the state of the specified \code{video} in the shiny application.
+#'
+#' @examples
+#' if (interactive()) {
+#'
+#' }
 #'
 #' @name video-server
 #' @rdname video-server
@@ -57,4 +58,11 @@ changeVideo <- function(id, files, format = NULL, session = getDefaultReactiveDo
   }
   sources <- lapply(seq(files), function(x) list(src = files[x], type = format[x]))
   session$sendCustomMessage("changeVideo", list(id = id, src = sources))
+}
+
+#' @param playrate Speed of playback of the video. Default is set to 1 (normal speed)
+#' @rdname video-server
+#' @export
+updatePlaybackRate <- function(id, playrate = 1, session = getDefaultReactiveDomain()) {
+  session$sendCustomMessage("setVideoPlayrate", list(id = id, playrate = playrate))
 }

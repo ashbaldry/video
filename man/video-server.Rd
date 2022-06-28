@@ -7,6 +7,7 @@
 \alias{stopVideo}
 \alias{seekVideo}
 \alias{changeVideo}
+\alias{updatePlaybackRate}
 \title{Update video.js Server-Side}
 \usage{
 playVideo(id, session = getDefaultReactiveDomain())
@@ -18,6 +19,8 @@ stopVideo(id, session = getDefaultReactiveDomain())
 seekVideo(id, seek, session = getDefaultReactiveDomain())
 
 changeVideo(id, files, format = NULL, session = getDefaultReactiveDomain())
+
+updatePlaybackRate(id, playrate = 1, session = getDefaultReactiveDomain())
 }
 \arguments{
 \item{id}{ID of the \code{video} to update}
@@ -29,6 +32,8 @@ changeVideo(id, files, format = NULL, session = getDefaultReactiveDomain())
 \item{files}{A vector of file paths or URLs pointing}
 
 \item{format}{An optional list of formats of \code{video}}
+
+\item{playrate}{Speed of playback of the video. Default is set to 1 (normal speed)}
 }
 \value{
 Updates the the state of the specified \code{video} in the shiny application.
@@ -36,14 +41,15 @@ Updates the the state of the specified \code{video} in the shiny application.
 \description{
 Change the state of the video player from the server.
 
-\code{playVideo}, \code{pauseVideo} and \code{stopVideo} will all be applied to the current track.
+\code{playVideo}, \code{pauseVideo} and \code{stopVideo} will all be applied to the current video.
 
-\code{changeTrack} will update the track to the file specified. This file must be included when the player
-is initialised, otherwise it won't change the track.
+\code{changeVideo} will update the track to the URL or file specified.
 
-\code{addTrack} will add a new track to the specified player.
+\code{updatePlaybackRate} will change how fast the video is playing.
 }
 \examples{
-if (interactive()) {}
+if (interactive()) {
+
+}
 
 }

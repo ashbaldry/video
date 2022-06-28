@@ -74,7 +74,7 @@ if (interactive()) {
 
   ui <- fluidPage(
     title = "howler.js Player",
-    video("http://vjs.zencdn.net/v/oceans.mp4")
+    video("https://vjs.zencdn.net/v/oceans.mp4")
   )
 
   server <- function(input, output) {

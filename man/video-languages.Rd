@@ -27,7 +27,7 @@ that will apply the language to all videos. See \url{https://videojs.com/guides/
 for more details
 }
 \examples{
-video <- video("http://vjs.zencdn.net/v/oceans.mp4")
+video <- video("https://vjs.zencdn.net/v/oceans.mp4")
 video <- addVideoLanguages(video, c("es", "fr", "de"))
 
 if (interactive()) {

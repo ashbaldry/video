@@ -23,7 +23,7 @@ devtools::install_github("ashbaldry/video")
 The HTML way to include an audio file in any shiny application/web page is to use the `<audio>` tag. This cannot (easily) be manipulated from the server. 
 
 ```r
-tags$video(src = "http://vjs.zencdn.net/v/oceans.mp4", type = "video/mp4", controls = NA)
+tags$video(src = "https://vjs.zencdn.net/v/oceans.mp4", type = "video/mp4", controls = NA)
 ```
 
 video.js is a flexible video player that is more robust than the basic HTML5 video player, and can easily be manipulated from the server side of shiny applications.
@@ -36,7 +36,7 @@ ui <- fluidPage(
   title = "video Example",
   h1("Video Example"),
   video(
-    "http://vjs.zencdn.net/v/oceans.mp4",
+    "https://vjs.zencdn.net/v/oceans.mp4",
     elementId = "video"
   ),
   tags$p(
@@ -64,6 +64,8 @@ shinyApp(ui, server)
 ```
 
 <video src="https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4" type="movie/mp4" controls style="width: 100%"></video>
+
+Whilst the buttons below the video aren't required for playing/pausing the video, they are linked to `observeEvent`s that send messages from the server to the video to update.
 
 ## Examples
 

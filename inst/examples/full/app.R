@@ -5,7 +5,7 @@ ui <- fluidPage(
   title = "video Example",
   h1("Video Example"),
   video(
-    "http://vjs.zencdn.net/v/oceans.mp4",
+    "https://vjs.zencdn.net/v/oceans.mp4",
     elementId = "video"
   ),
   tags$br(),
