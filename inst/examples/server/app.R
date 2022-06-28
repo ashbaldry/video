@@ -29,7 +29,10 @@ server <- function(input, output, session) {
   observeEvent(input$pause, pauseVideo("video"))
   observeEvent(input$stop, stopVideo("video"))
   observeEvent(input$seek, seekVideo("video", 10))
-  observeEvent(input$change, changeVideo("video", "//d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4"))
+  observeEvent(input$change, {
+    changeVideo("video", "//d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4")
+    playVideo("video")
+  })
 }
 
 shinyApp(ui, server)
