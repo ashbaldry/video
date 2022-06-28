@@ -81,7 +81,7 @@
 </h2>
 <p>The HTML way to include an audio file in any shiny application/web page is to use the <code>&lt;audio&gt;</code> tag. This cannot (easily) be manipulated from the server.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tags</span><span class="op">$</span><span class="fu">video</span><span class="op">(</span>src <span class="op">=</span> <span class="st">"http://vjs.zencdn.net/v/oceans.mp4"</span>, type <span class="op">=</span> <span class="st">"video/mp4"</span>, controls <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">tags</span><span class="op">$</span><span class="fu">video</span><span class="op">(</span>src <span class="op">=</span> <span class="st">"https://vjs.zencdn.net/v/oceans.mp4"</span>, type <span class="op">=</span> <span class="st">"video/mp4"</span>, controls <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre></div>
 <p>video.js is a flexible video player that is more robust than the basic HTML5 video player, and can easily be manipulated from the server side of shiny applications.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span>
@@ -91,7 +91,7 @@
 <span>  title <span class="op">=</span> <span class="st">"video Example"</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">h1</a></span><span class="op">(</span><span class="st">"Video Example"</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="reference/video.html">video</a></span><span class="op">(</span></span>
-<span>    <span class="st">"http://vjs.zencdn.net/v/oceans.mp4"</span>,</span>
+<span>    <span class="st">"https://vjs.zencdn.net/v/oceans.mp4"</span>,</span>
 <span>    elementId <span class="op">=</span> <span class="st">"video"</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="va">tags</span><span class="op">$</span><span class="fu">p</span><span class="op">(</span></span>
@@ -116,7 +116,7 @@
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
-<video src="https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4" type="movie/mp4"></video>
+<video src="https://user-images.githubusercontent.com/8420419/175826808-83d03bfc-6ba1-49c6-8f86-4e40973b010d.mp4" type="movie/mp4" controls style="width: 100%"></video><p>Whilst the buttons below the video aren’t required for playing/pausing the video, they are linked to <code>observeEvent</code>s that send messages from the server to the video to update.</p>
 </div>
 <div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
