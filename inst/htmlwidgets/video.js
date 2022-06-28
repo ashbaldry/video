@@ -11,6 +11,7 @@ HTMLWidgets.widget({
         const id = el.id;
 
         video = videojs(el.id, options);
+        $(`#${el.id}`).attr("style", null);
 
         if (HTMLWidgets.shinyMode) {
           video.on("loadedmetadata", () => {
