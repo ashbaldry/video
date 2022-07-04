@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/ashbaldry/video/workflows/R-CMD-check/badge.svg)](https://github.com/ashbaldry/video/actions)
 <!-- badges: end -->
 
-# {video}  - Interactive Video Player
+# {video}  - Interactive Video Player <img src="https://raw.githubusercontent.com/ashbaldry/video/master/man/figures/logo.png" align="right" width="120"/>
 
 `{video}` is a package that utilises the [video.js](https://github.com/videojs/video.js) library to play video on the modern web. 
 
