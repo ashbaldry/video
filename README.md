@@ -67,6 +67,10 @@ shinyApp(ui, server)
 
 Whilst the buttons below the video aren't required for playing/pausing the video, they are linked to `observeEvent`s that send messages from the server to the video to update.
 
+### Extending video.js
+
+For those who want more from video.js and isn't currently available within {video}, then the API is very flexible (https://docs.videojs.com/), and any video can be retrieved in JavaScript using `const player = videojs("id")` and manipulated from there.
+
 ## Examples
 
 All examples are available in the [Examples](https://github.com/ashbaldry/video/tree/main/inst/examples) directory and can be run locally by installing the `{video}` package:
