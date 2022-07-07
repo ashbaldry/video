@@ -1,8 +1,8 @@
-#' Add Subtitles to Video
+#' Add Text Tracks to Video
 #'
 #' @description
 #' video.js contains the ability to include tracks with the video, including subtitles,
-#' captions and descriptions. \code{includeSubtitles} will make sure that they are
+#' captions and descriptions. \code{includeTextTracks} will make sure that they are
 #' included on load, and find the defaults to embed with the video.
 #'
 #' @param video A \code{\link{video}()}
@@ -12,7 +12,7 @@
 #' e.g. "en" for English or "es" for Spanish.
 #' @param label Short descriptive text for the track that will used in the user interface.
 #' For example, in a menu for selecting a captions language.
-#' @param kind An optional vector to match the type of subtitles in \code{files}:
+#' @param kind An optional vector to match the type of text tracks in \code{files}:
 #' \describe{
 #' \item{subtitles}{(default): Translations of the dialogue in the video for when audio is
 #' available but not understood. Subtitles are shown over the video.}
@@ -37,15 +37,19 @@
 #' they will be applied to all \code{files} supplied.
 #'
 #' @return
-#' An updated \code{video} with subtitles included
+#' An updated \code{video} with text tracks included
 #'
 #' @examples
 #' vid <- video("https://vjs.zencdn.net/v/oceans.mp4")
-#' includeSubtitles(vid, "url/to/subtitles")
+#' includeTextTracks(vid, "url/to/subtitles.vtt")
 #'
 #' @export
-includeSubtitles <- function(video, files, language = "en", label = "English",
+includeTextTracks <- function(video, files, language = "en", label = "English",
                              kind = "subtitles", default = FALSE) {
+  if (length(files) == 0) {
+    stop("No text tracks provided to add")
+  }
+
   n_files <- length(files)
 
   language <- checkLength(language, n_files, "language")
