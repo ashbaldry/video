@@ -1,6 +1,6 @@
 Package: video
 Type: Package
-Title: 'Shiny' Extenstion of 'video.js'
+Title: 'Shiny' Extension of 'video.js'
 Version: 0.1.0
 Authors@R: c(
     person("Ashley", "Baldry", email = "arbaldry91@gmail.com", role = c("aut", "cre")),

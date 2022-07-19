@@ -20,7 +20,7 @@ A data frame with 96 rows and 2 variables:
 video_formats
 }
 \description{
-A datset containing the format type of all potential video file extensions. Used
+A dataset containing the format type of all potential video file extensions. Used
 as the "type" attribute for HTML videos.
 }
 \keyword{datasets}
