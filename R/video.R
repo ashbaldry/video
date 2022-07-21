@@ -114,8 +114,10 @@ video <- function(files, format = NULL, options = list(), seek_ping_rate = 1000,
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
 #'
-#' @name video-shiny
+#' @return
+#' An output or render function that enables the use of the widget within Shiny applications.
 #'
+#' @name video-shiny
 #' @export
 videoOutput <- function(outputId, width = "100%", height = "400px"){
   htmlwidgets::shinyWidgetOutput(outputId, "video", width, height, package = "video")
