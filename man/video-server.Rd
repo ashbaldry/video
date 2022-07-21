@@ -49,7 +49,22 @@ Change the state of the video player from the server.
 }
 \examples{
 if (interactive()) {
+  library(shiny)
 
+  ui <- fluidPage(
+    title = "howler.js Player",
+    video(
+      "https://vjs.zencdn.net/v/oceans.mp4",
+      elementId = "video"
+     ),
+    actionButton("pause", "Pause Video")
+  )
+
+  server <- function(input, output) {
+    observeEvent(input$pause, pasueVideo("video"))
+  }
+
+  runShiny(ui, server)
 }
 
 }
