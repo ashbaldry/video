@@ -15,7 +15,7 @@ BugReports: https://github.com/ashbaldry/video/issues
 Encoding: UTF-8
 Depends: R (>= 2.10)
 Imports: shiny, htmlwidgets, jsonlite
-Suggests: rmarkdown, knitr, shinytest2, globals, testthat (>= 3.0.0)
+Suggests: rmarkdown, knitr, shinytest2, testthat (>= 3.0.0)
 Language: en-GB
 RoxygenNote: 7.2.0
 Config/testthat/edition: 3
