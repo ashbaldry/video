@@ -1,7 +1,7 @@
 Package: video
 Type: Package
 Title: 'Shiny' Extension of 'video.js'
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Ashley", "Baldry", email = "arbaldry91@gmail.com", role = c("aut", "cre")),
     person("Steve", "Heffernan", role = "aut", comment = "Creator of video.js")
@@ -17,6 +17,6 @@ Depends: R (>= 2.10)
 Imports: shiny, htmlwidgets, jsonlite
 Suggests: rmarkdown, knitr, shinytest2, testthat (>= 3.0.0)
 Language: en-GB
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.3
 Config/testthat/edition: 3
 VignetteBuilder: knitr
