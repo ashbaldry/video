@@ -29,7 +29,7 @@
 #'   )
 #'
 #'   server <- function(input, output) {
-#'     observeEvent(input$pause, pasueVideo("video"))
+#'     observeEvent(input$pause, pauseVideo("video"))
 #'   }
 #'
 #'   runShiny(ui, server)
